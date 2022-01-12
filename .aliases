@@ -13,8 +13,6 @@ alias l='ls -lav --ignore=.?*'   # show long listing but no hidden dotfiles exce
 alias xclip='xclip -sel clip'
 
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-
 ## Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
@@ -78,7 +76,7 @@ ex ()
 
 ## CTF VPNs
 alias thmvpn="sudo openvpn ~/.vpn/thm.openvpn"
-alias htbspvpn="sudo openvpn ~/.vpn/starting_point_RysYx.ovpn"
+alias htbspvpn="sudo openvpn ~/.vpn/sp.ovpn"
 alias htbvpn="sudo openvpn ~/.vpn/htbvip.ovpn"
 
 ## Don't add to known_hosts
