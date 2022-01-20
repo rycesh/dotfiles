@@ -109,7 +109,7 @@ static const Rule rules[] = {
 	RULE(.class    = "Gimp", .isfloating=1, .tags = 1 << 3)
 	RULE(.class    = "Lxappearance", .isfloating = 1)
 	RULE(.class    = "File-roller", .isfloating = 1)
-	//RULE(.class    = "arcolinux-logout", .alwaysFullscreen)
+	RULE(.class    = "arcolinux-logout", .isfloating = 1)
 	RULE(.class    = "obs", .monitor = 1)
 	RULE(.instance = "discord", .isfloating = 1)
 	RULE(.class    = "mpv", .isfloating = 1)
@@ -181,7 +181,6 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *termcmd[] = { "st", NULL };
-static const char *eww_close[] = { "eww", "close-all", NULL };
 static const char *lock[] = {
 	"betterlockscreen", 
 	"-l", "blur", 
@@ -189,31 +188,9 @@ static const char *lock[] = {
 	"1", 
 	NULL 
 };
-static const char *inhibitor_on[] = { "inhibit_activate", NULL };
+/*static const char *inhibitor_on[] = { "inhibit_activate", NULL };
 static const char *inhibitor_off[] = { "inhibit_deactivate", NULL };
-static const char *eww_panel[] = { 
-	"eww", 
-	"open-many", 
-	"blur",
-	"profile", 
-	"system", 
-	"clock", 
-	"uptime",
-	"music",
-	"github",
-	"reddit",
-	"lor",
-	"youtube",
-	"twitch",	
-	"weather",
-	"apps", 
-	"logout",
-	"sleep",
-	"reboot",
-	"poweroff",
-	"folders",
-	NULL
-};
+*/
 
 static Key keys[] = {
 
@@ -282,13 +259,11 @@ static Key keys[] = {
 
 	/* Custom commands */
 
-	{ MODKEY, 						XK_e, 		   spawn,                  {.v = eww_panel } }, /* Launch eww panel */
-	{ MODKEY|ShiftMask, 			XK_e, 		   spawn,                  {.v = eww_close } }, /* Close every eww instance */
-	{ MODKEY,                       XK_F1,         spawn,                  {.v = lock } }, /* rofi clipboard */
+	{ MODKEY,                       XK_o,          spawn,                  {.v = lock } }, /* rofi clipboard */
 	{ MODKEY,                       XK_x,          spawn,                  SHCMD("arcolinux-logout") }, /* activate inhibitor */
-	{ 0,             		        PrintScr,      spawn,                  SHCMD("maim -s -u| xclip -selection clipboard -t image/png && notify-send \"Screenshot\" \"Copied to Clipboard\" -i screenie")}, /* maim screen copy */
-	{ MODKEY,             			PrintScr,      spawn,                  SHCMD("maim -s -u ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && notify-send \"Screenshot\" \"Saved to Pictures\" -i screenie")}, /* maim screen */
-	{ 0, 							XK_ISO_Next_Group, 		spawn, 		   SHCMD("pkill -RTMIN+10 dwmblocks")}, /* keyboard indicator */
+	{ 0,             		PrintScr,      spawn,                  SHCMD("maim -s -u| xclip -selection clipboard -t image/png && notify-send \"Screenshot\" \"Copied to Clipboard\" -i screenie")}, /* maim screen copy */
+	{ MODKEY,             		PrintScr,      spawn,                  SHCMD("maim -s -u ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && notify-send \"Screenshot\" \"Saved to Pictures\" -i screenie")}, /* maim screen */
+	{ 0, 				XK_ISO_Next_Group, 		spawn, 		   SHCMD("pkill -RTMIN+10 dwmblocks")}, /* keyboard indicator */
 };
 
 

@@ -10,7 +10,7 @@ static char *font2[] = {
 	"NotoEmoji Nerd Font:size=11:antialias=true:autohint=true", 
 };
 
-static int borderpx = 14;
+static int borderpx = 7;
 
 static char *url_opener = "xdg-open";
 
