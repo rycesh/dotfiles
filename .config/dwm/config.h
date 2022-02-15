@@ -8,12 +8,12 @@ static const unsigned int gappov         = 5;  /* vert outer gap between windows
 static const int smartgaps_fact          = 1;   /* gap factor when there is only one client; 0 = no gaps, 3 = 3x outer gaps */
 static const char autostartblocksh[]     = "autostart_blocking.sh";
 static const char autostartsh[]          = "~/.bin/autostart.sh";
-static const char dwmdir[]               = "dwm";
+static const char dwmdir[]               = "~/.config/dwm";
 static const char localshare[]           = ".local/share";
 static const int showbar                 = 1;   /* 0 means no bar */
 static const int topbar                  = 1;   /* 0 means bottom bar */
 static const int bar_height              = 24;   /* 0 means derive from font, >= 1 explicit height */
-static const int vertpad                 = 7;  /* vertical padding of bar */
+static const int vertpad                 = 4;  /* vertical padding of bar */
 static const int sidepad                 = 5;  /* horizontal padding of bar */
 /* Status is to be shown on: -1 (all monitors), 0 (a specific monitor by index), 'A' (active monitor) */
 static const int statusmon               = -1;
@@ -149,7 +149,6 @@ static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] 
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int decorhints  = 0;    /* 1 means respect decoration hints */
-
 
 
 static const Layout layouts[] = {
@@ -295,6 +294,4 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,              Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,              Button3,        toggletag,      {0} },
 };
-
-
 
