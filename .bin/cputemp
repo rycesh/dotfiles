@@ -1,0 +1,2 @@
+#!/bin/sh
+sensors | awk '/Tctl/ {sub(/^\+/, "", $2);print $2}'
