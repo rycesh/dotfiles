@@ -1,4 +1,5 @@
 unalias -a
+PROMPT="%n@%m:%B%F{green}%~%f$ %b"
 
 #YT Downloader
 function ytrb () yt-dlp -f 'ba' -x --audio-format wav $1 -P "~/Music/PioneerDJ/Songs"
