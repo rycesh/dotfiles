@@ -18,6 +18,7 @@ function pnh() {
 alias ls='gls -h --group-directories-first --color=auto'
 alias dev='cd ~/Developer'
 alias llama='ollama run llama2-uncensored'
+alias v="vim"
 
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 export GPG_TTY=$(tty);
